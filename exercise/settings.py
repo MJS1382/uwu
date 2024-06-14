@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k$qx4+!rp=(v#5)399ms)-q-ewizyprjcnc&j-fu3j-@1-fyl%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
+
 ]
 
 REST_FRAMEWORK = {
@@ -56,6 +58,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
 ]
 
 ROOT_URLCONF = 'exercise.urls'
@@ -77,6 +85,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'exercise.wsgi.application'
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 
 # Database

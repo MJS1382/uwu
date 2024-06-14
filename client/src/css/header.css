@@ -1,0 +1,24 @@
+.header {
+    background-color: green;
+    height: fit-content;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    height: fit-content;
+    padding: 15px 50px;
+}
+
+.head span {
+    height: 20px;
+}
+
+.img-container img{
+    max-height: 400px;
+}
+
+.logo {
+    /* margin-left: auto; */
+}
